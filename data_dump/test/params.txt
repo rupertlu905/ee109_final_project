@@ -1,0 +1,4 @@
+input shape: torch.Size([2, 1, 3])
+weight shape: torch.Size([3, 3])
+bias shape: torch.Size([3])
+output shape: torch.Size([2, 1, 3])
