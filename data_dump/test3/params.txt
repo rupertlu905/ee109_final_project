@@ -1,0 +1,9 @@
+embed_dim: 6
+n_head: 2
+head_dim: 3
+L_q: 2
+L_k: 3
+L_v: 3
+attn_weights shape: torch.Size([2, 2, 3])
+value shape: torch.Size([3, 1, 6])
+attn_output shape: torch.Size([2, 1, 6])
