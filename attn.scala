@@ -4,7 +4,7 @@ import spatial.dsl._
 //takes in CSV, NO COMMA SEPARATION, separate line for each element
 //total # of lines = total # of elements
 
-@spatial class LoadCSV extends SpatialTest {
+@spatial class MultiheadAttention extends SpatialTest {
     // TODO: tweak the precision
     type T = FixPt[TRUE,_32,_24] // Fixed point notation, [signed, 16 bits, 8 bits fraction]
 
