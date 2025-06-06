@@ -1,0 +1,6 @@
+embed_dim: 6
+L_q: 2
+attn_output shape: torch.Size([2, 1, 6])
+weight shape: torch.Size([6, 6])
+bias shape: torch.Size([6])
+final_output shape: torch.Size([2, 1, 6])
