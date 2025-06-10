@@ -45,14 +45,13 @@ import spatial.dsl._
             weight_q_sram load weight_q_dram
             bias_q_sram load bias_q_dram
 
-            // Compute q_proj = q × weight_q.T + bias_q. 
-            //TODO: make the following foreach loop NOT take 5 mins to run
             Foreach(L_q by 1, N by 1, E by 1) { (l, n, e_out) =>
                 val sum = Reg[T](0.to[T])
                 Foreach(E by 1) { e_in =>
                     sum := sum + input_q_sram(l, n, e_in) * weight_q_sram(e_out, e_in)
                 }
-                output_q_sram(l, n, e_out) = sum + bias_q_sram(e_out)
+                // Divide by 1 or 8 depending on whether we're projecting query or key/value
+                output_q_sram(l, n, e_out) = (sum + bias_q_sram(e_out)) / 8
             }
 
             output_q_dram store output_q_sram
